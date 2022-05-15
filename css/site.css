@@ -49,6 +49,12 @@ header>a:hover {
     font-size: 2em;
 }
 
+.link--blogs {
+    flex-grow: 1;
+    font-size: 1em;
+    text-align: right;
+}
+
 .link--about {
     flex-grow: 1;
     font-size: 1em;
