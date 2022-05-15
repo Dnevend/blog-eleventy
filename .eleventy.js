@@ -14,6 +14,8 @@ module.exports = function (eleventyConfig){
 
     eleventyConfig.addShortcode('excerpt', article => extractExcerpt(article));
 
+    eleventyConfig.addPassthroughCopy("imgs");
+
     eleventyConfig.addPassthroughCopy("css");
 }
 

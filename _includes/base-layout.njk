@@ -11,12 +11,26 @@
 </head> 
 <body> 
   <header>
-    Site Header
+    <a href="/" class="link--home">Dnevend</a>
     <a href="/About" class="link--about">About</a>
-  </header> 
+  </header>
   <main> 
-    {{ content | safe }}
+    <div class="main-profile">
+      <div class="main-profile_pic">
+      &nbsp;
+      </div>
+      <div class="main-profile_desc">
+        <p>!表哥，记得常来玩喔</p>
+      </div>
+    </div>
+    <div class="main-content">
+      {{ content | safe }}
+    </div>
   </main> 
-  <footer>&copy; Site Footer</footer> 
+  <footer>
+  <a href="https://github.com/Dnevend" target="_blank" class="link-github">Github</a>
+  <a href="https://twitter.com/Dnevend_09" target="_blank" class="link-twitter">Twitter</a>
+  &copy; Dnevend
+  </footer>
 </body> 
 </html>
