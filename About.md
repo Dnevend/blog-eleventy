@@ -15,5 +15,6 @@ layout: base-layout.njk
 ## Skill Stack
 > [JavaScript]  
 > [React]  
+> [Linux]  
 > [.Net]  
-> [SQL]
+> [SQL]  
