@@ -23,7 +23,8 @@ header {
     /* Vertically align */
     padding: 5px 16px;
     color: white;
-    background-color: #0747A6;
+    /* background-color: #0747A6; */
+    background-color: #94B1FF;
     border-radius: 8px;
 }
 
