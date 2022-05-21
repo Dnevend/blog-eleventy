@@ -3,10 +3,12 @@
 <head> 
   <meta charset="utf-8"> 
   <meta name="viewport" content="width=device-width, initial-scale=1" /> 
-  <title>Dnevend's Blog</title> 
+  <title>Dnevend's Blog</title>
 
 <link rel="stylesheet" href="/css/site.css">
+<link rel="stylesheet" href="/css/markdown.css">
 <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:700|Roboto&display=fallback" rel="stylesheet">
+<link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
 
 </head> 
 <body> 
@@ -35,7 +37,7 @@
 与内容管理系统类似，生成器提供了使用布局模板，分离内容和页面框架，在某些情况下甚至可以从外部 CMS 中提取内容。</p>
 </li>
 <li>
-<p>本站点使用了<a href="https://www.11ty.dev/">Eleventy</a>， 常见的静态站点生成工具还有<a href="https://gohugo.io/">Hugo</a>、<a href="https://hexo.io/">Hexo</a>、<a href="https://nextjs.org/">Next.js</a>及 Github 官方默认的<a href="https://www.jekyll.com/">Jekyll</a>等等</p>
+<p>本站点使用了<a href="https://www.11ty.dev/" target="_blank" rel="noopener">Eleventy</a>，常见的静态站点生成工具还有<a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>、<a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>、<a href="https://nextjs.org/" target="_blank" rel="noopener">Next.js</a>及 Github 官方默认的<a href="https://www.jekyll.com/" target="_blank" rel="noopener">Jekyll</a>等等</p>
 </li>
 </ul>
 <h3>静态生成博客站点的优势</h3>
@@ -47,54 +49,17 @@
 <li>站点迁移方便</li>
 </ul>
 <h3>初始化</h3>
-<p>你可以通过参考 <a href="https://keepinguptodate.com/pages/2019/06/creating-blog-with-eleventy/">这篇文章</a> 来完成站点的初始工作.</p>
-<h3 class="c-article-section__title">部署流程</h3>
-<pre><code>name: Build Eleventy
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  build:
-    runs-on: ubuntu-20.04
-
-    strategy:
-      matrix:
-        node-version: [16.x]
-
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Use Node.js $
-        uses: actions/setup-node@v1
-        with:
-          node-version: $
-
-      - name: Install dependencies &amp; build
-        run: |
-          if [ -e package-lock.json ]; then
-          npm ci
-          else
-          npm i
-          fi
-          npm run build
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          publish_dir: ./_site
-          github_token: $
-</code></pre>
+<p>你可以通过参考 <a href="https://keepinguptodate.com/pages/2019/06/creating-blog-with-eleventy/" target="_blank" rel="noopener">这篇文章</a> 来完成站点的初始工作.</p>
+<h3>部署流程</h3>
+<pre class="language-shell-session" tabindex="0"><code class="language-shell-session"><span class="token output">name: Build Eleventy<br><br>on:<br>  push:<br>    branches:<br>      - main<br><br>jobs:<br>  build:<br>    runs-on: ubuntu-20.04<br><br>    strategy:<br>      matrix:<br>        node-version: [16.x]<br><br>    steps:<br>      - uses: actions/checkout@v2<br><br>      - name: Use Node.js $<br>        uses: actions/setup-node@v1<br>        with:<br>          node-version: $<br><br>      - name: Install dependencies &amp; build<br>        run: |<br>          if [ -e package-lock.json ]; then<br>          npm ci<br>          else<br>          npm i<br>          fi<br>          npm run build<br><br>      - name: Deploy<br>        uses: peaceiris/actions-gh-pages@v3<br>        with:<br>          publish_dir: ./_site<br>          github_token: $</code></pre>
 <h3>使用流程</h3>
 <h3>关键点</h3>
 <h3>参考引用</h3>
 <ul>
-<li><a href="https://docs.github.com/cn/pages">Github Pages</a></li>
-<li><a href="https://www.11ty.dev/docs/tutorials/">Eleventy Documentation</a></li>
-<li><a href="https://keepinguptodate.com/pages/2019/06/creating-blog-with-eleventy/">Creating A Blog With Eleventy</a></li>
-<li><a href="https://quinndombrowski.com/blog/2022/05/07/hosting-eleventy-on-github-pages/">Hosting Eleventy on GitHub Pages</a></li>
+<li><a href="https://docs.github.com/cn/pages" target="_blank" rel="noopener">Github Pages</a></li>
+<li><a href="https://www.11ty.dev/docs/tutorials/" target="_blank" rel="noopener">Eleventy Documentation</a></li>
+<li><a href="https://keepinguptodate.com/pages/2019/06/creating-blog-with-eleventy/" target="_blank" rel="noopener">Creating A Blog With Eleventy</a></li>
+<li><a href="https://quinndombrowski.com/blog/2022/05/07/hosting-eleventy-on-github-pages/" target="_blank" rel="noopener">Hosting Eleventy on GitHub Pages</a></li>
 </ul>
 
 </article>
