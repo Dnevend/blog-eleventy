@@ -10,3 +10,5 @@ const markdownIt = markdownItDefault({
 const markdownLib = markdownIt.use(markdonwItEmoji).use(markdownItAttrs);
 
 module.exports = markdownLib;
+
+// https://www.11ty.dev/docs/languages/markdown/#add-your-own-plugins

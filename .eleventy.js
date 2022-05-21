@@ -1,5 +1,6 @@
 const moment = require('moment');
 const markdownLib = require('./11ty/markdown.js');
+// https://www.11ty.dev/docs/plugins/syntaxhighlight/
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 moment.locale('en');
 
@@ -19,6 +20,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addShortcode('excerpt', article => extractExcerpt(article));
 
     eleventyConfig.setLibrary("md", markdownLib);
+    
     eleventyConfig.addPlugin(syntaxHighlight, {
         // Change which Eleventy template formats use syntax highlighters
         templateFormats: ["*"], // default
