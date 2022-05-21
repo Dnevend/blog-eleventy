@@ -1,7 +1,7 @@
 # Dnevend.github.io
 [Dnevend's Bolg](https://dnevend.github.io/)
 
-> TODO
+> TODO:
 - Categories 
 - Pagination
 - Pretty
