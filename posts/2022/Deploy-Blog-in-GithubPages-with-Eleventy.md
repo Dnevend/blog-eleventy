@@ -2,12 +2,15 @@
 layout: post-layout.njk
 title: 使用Eleventy在GithubPages上部署博客站点
 date: 2022-05-15
-tags: ["post"]
+tags: ["post", "eleventy"]
 ---
 
 <!-- Excerpt Start -->
-使用静态站点，让博客更专注于内容，减少来自服务器维护、域名、版本管理等一系列的操作和时间成本。
+无需服务器、数据库、域名，使用静态站点生成工具，折腾个人博客。
+![alt 11ty](/imgs/11ty.jfif)
 <!-- Excerpt End -->
+
+---
 
 ### 什么是静态网站和静态网站生成器
 
@@ -29,10 +32,23 @@ tags: ["post"]
 
 ### 初始化
 
-你可以通过参考 [这篇文章](https://keepinguptodate.com/pages/2019/06/creating-blog-with-eleventy/){target="_blank" rel="noopener"} 来完成站点的初始工作.
+- 你可以通过参考 [这篇文章](https://keepinguptodate.com/pages/2019/06/creating-blog-with-eleventy/){target="_blank" rel="noopener"} 来完成站点的初始工作.
 
 ### 部署流程
 
+- 你可以通过参考 [这篇文章](https://quinndombrowski.com/blog/2022/05/07/hosting-eleventy-on-github-pages/){target="_blank" rel="noopener"} 来完成将Eleventy项目托管发布在GithubPages上的工作.
+
+> [**Github中的配置**](https://docs.github.com/cn/pages){target="_blank" rel="noopener"}
+
+
+> **Eleventy中配置**
+> - .nojekyll文件：在项目根目录中创建一个名为 <i>.nojekyll</i> 的空文件，此文件将阻止Github尝试将你的站点构建为jekyll站点.
+
+> - .github目录：在项目根目录中创建一个名为 <i>.github</i> 的目录，并在此目录中创建名为 <i>workflows</i> 的目录.
+
+> - build.yml文件：在上述步骤创建的workflows目录中创建名为 <i>build.yml</i> 文件，这个文件将会在你提交Git操作的时候触发工作流程，以在你每次更新内容的时候重新生成站点并发布.
+
+> **build.yml**
 ```shell-session
 name: Build Eleventy
 
@@ -72,12 +88,11 @@ jobs:
           publish_dir: ./_site
           github_token: ${{ secrets.GITHUB_TOKEN }}
 ```
-### 使用流程
 
-### 关键点
+---
 
 ### 参考引用
-
+- [本项目开源地址](https://github.com/Dnevend/Dnevend.github.io)
 - [Github Pages](https://docs.github.com/cn/pages)
 - [Eleventy Documentation](https://www.11ty.dev/docs/tutorials/)
 - [Creating A Blog With Eleventy](https://keepinguptodate.com/pages/2019/06/creating-blog-with-eleventy/)
