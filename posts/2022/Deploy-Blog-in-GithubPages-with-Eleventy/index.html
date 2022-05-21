@@ -60,6 +60,24 @@
 </ul>
 <blockquote>
 <p><a href="https://docs.github.com/cn/pages" target="_blank" rel="noopener"><strong>Github中的配置</strong></a></p>
+<ul>
+<li>创建公开的代码仓库命名为[name].github.io</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>创建gh-pages分支</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>进入仓库设置页的Actions/General选项页中，选择Action permissions选项的<i>Allow all actions and reusable workflows</i>，以及Workflow permissions选项的Read and write permissions，以使你的Workflows能正常的写入站点文件</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>进入仓库设置页的Pages选项页，在Source下拉菜单中选择刚刚创建的gh-pages分支,通过[name].github.io访问时，将默认读取此分支下的静态文件</li>
+</ul>
 </blockquote>
 <blockquote>
 <p><strong>Eleventy中配置</strong></p>
