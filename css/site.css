@@ -62,22 +62,9 @@ header>a:hover {
     text-align: right;
 }
 
-.main-profile{
+.share-box{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 25px 0;
-}
-
-.main-profile_pic{
-    width: 250px;
-    height: 250px;
-    border-radius: 125px;
-    background-size: 100% 100%;
-    background: url('/imgs/profile.png') center center no-repeat;
-}
-.main-profile_desc{
-    direction: rtl;
+    justify-content: flex-end;
 }
 
 main {

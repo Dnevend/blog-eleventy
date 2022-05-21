@@ -2,7 +2,7 @@
 layout: post-layout.njk
 title: 使用Eleventy在GithubPages上部署博客站点
 date: 2022-05-15
-tags: ["post", "eleventy"]
+tags: ["eleventy"]
 recommend: true
 ---
 
@@ -25,13 +25,13 @@ recommend: true
 
 ### 静态生成博客站点的优势
 
-- 当部署在 GithubPages 上，可直接通过域名[yourname].github.io 访问，节省域名费用成本
+- 当部署在 GithubPages 上，可直接通过域名[name].github.io 访问，节省域名费用成本
 - 无需服务器和数据库，确保了站点的安全性
 - 可以使用多种 HTML、MarkDown 等模板语言
 - 文档可以通过 Git 进行版本管理
 - 站点迁移方便
 
-### 初始化
+### 项目初始化
 
 - 你可以通过参考 [这篇文章](https://keepinguptodate.com/pages/2019/06/creating-blog-with-eleventy/){target="_blank" rel="noopener"} 来完成站点的初始工作.
 
