@@ -35,20 +35,58 @@
 与内容管理系统类似，生成器提供了使用布局模板，分离内容和页面框架，在某些情况下甚至可以从外部 CMS 中提取内容。</p>
 </li>
 <li>
-<p>本站点使用了<a href="https://www.11ty.dev/">Eleventy</a>， 常见的还有<a href="https://gohugo.io/">Hugo</a>、<a href="https://hexo.io/">Hexo</a>、<a href="https://nextjs.org/">Next.js</a>及Github官方默认的<a href="https://www.jekyll.com/">Jekyll</a>等等</p>
+<p>本站点使用了<a href="https://www.11ty.dev/">Eleventy</a>， 常见的静态站点生成工具还有<a href="https://gohugo.io/">Hugo</a>、<a href="https://hexo.io/">Hexo</a>、<a href="https://nextjs.org/">Next.js</a>及 Github 官方默认的<a href="https://www.jekyll.com/">Jekyll</a>等等</p>
 </li>
 </ul>
 <h3>静态生成博客站点的优势</h3>
 <ul>
-<li>当部署在GithubPages上，可直接通过域名[yourname].github.io访问，节省域名费用成本</li>
+<li>当部署在 GithubPages 上，可直接通过域名[yourname].github.io 访问，节省域名费用成本</li>
 <li>无需服务器和数据库，确保了站点的安全性</li>
-<li>可以使用多种HTML、MarkDown等模板语言</li>
-<li>文档可以通过Git进行版本管理</li>
+<li>可以使用多种 HTML、MarkDown 等模板语言</li>
+<li>文档可以通过 Git 进行版本管理</li>
 <li>站点迁移方便</li>
 </ul>
-<h3>构建流程</h3>
+<h3>初始化</h3>
 <p>你可以通过参考 <a href="https://keepinguptodate.com/pages/2019/06/creating-blog-with-eleventy/">这篇文章</a> 来完成站点的初始工作.</p>
-<h3>部署流程</h3>
+<h3 class="c-article-section__title">部署流程</h3>
+<pre><code>name: Build Eleventy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js $
+        uses: actions/setup-node@v1
+        with:
+          node-version: $
+
+      - name: Install dependencies &amp; build
+        run: |
+          if [ -e package-lock.json ]; then
+          npm ci
+          else
+          npm i
+          fi
+          npm run build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_dir: ./_site
+          github_token: $
+</code></pre>
 <h3>使用流程</h3>
 <h3>关键点</h3>
 <h3>参考引用</h3>
