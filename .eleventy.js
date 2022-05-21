@@ -1,8 +1,15 @@
 const moment = require('moment');
+const markdownIt = require('markdown-it')({
+    html: true,
+    linkify: true,
+    typographer: true
+});
+const markdonwItEmoji = require('markdown-it-emoji');
+const markdownLib = markdownIt.use(markdonwItEmoji);
 
 moment.locale('en');
 
-module.exports = function (eleventyConfig){
+module.exports = function (eleventyConfig) {
 
     eleventyConfig.addFilter('dateIso', date => {
         return moment(date).toISOString();
@@ -14,13 +21,14 @@ module.exports = function (eleventyConfig){
 
     eleventyConfig.addShortcode('excerpt', article => extractExcerpt(article));
 
-    eleventyConfig.addPassthroughCopy("imgs");
+    eleventyConfig.setLibrary("md", markdownLib);
 
+    eleventyConfig.addPassthroughCopy("imgs");
     eleventyConfig.addPassthroughCopy("css");
 }
 
 function extractExcerpt(article) {
-    if(!article.hasOwnProperty('templateContent')){
+    if (!article.hasOwnProperty('templateContent')) {
         console.warn('Failed to extract excerpt: Document has no property "templateContent".');
         return null;
     }
@@ -37,7 +45,7 @@ function extractExcerpt(article) {
         const startPosition = content.indexOf(separators.start);
         const endPosition = content.indexOf(separators.end);
 
-        if(startPosition !== -1 && endPosition !== -1){
+        if (startPosition !== -1 && endPosition !== -1) {
             excerpt = content.substring(startPosition + separators.start.length, endPosition).trim();
             return true; // Exit out of array loop on first match
         }

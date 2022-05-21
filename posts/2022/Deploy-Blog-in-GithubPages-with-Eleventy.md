@@ -24,22 +24,22 @@ tags: ["post"]
 
 ### 静态生成博客站点的优势
 
-    - 当部署在GithubPages上，可直接通过域名[yourname].github.io访问，节省域名费用成本
-    - 无需服务器和数据库，确保了站点的安全性
-    - 可以使用多种Html、MarkDown等模板语言
-    - 文档可以通过Git进行版本管理
-    - 站点迁移方便
+- 当部署在GithubPages上，可直接通过域名[yourname].github.io访问，节省域名费用成本
+- 无需服务器和数据库，确保了站点的安全性
+- 可以使用多种HTML、MarkDown等模板语言
+- 文档可以通过Git进行版本管理
+- 站点迁移方便
 
 ### 构建流程
-
-### 发布流程
+你可以通过参考 [这篇文章](https://keepinguptodate.com/pages/2019/06/creating-blog-with-eleventy/) 来完成站点的初始工作.
+### 部署流程
 
 ### 使用流程
 
 ### 关键点
 
 ### 参考引用
-
+- [Github Pages](https://docs.github.com/cn/pages)
 - [Eleventy Documentation](https://www.11ty.dev/docs/tutorials/)
 - [Creating A Blog With Eleventy](https://keepinguptodate.com/pages/2019/06/creating-blog-with-eleventy/)
 - [Hosting Eleventy on GitHub Pages](https://quinndombrowski.com/blog/2022/05/07/hosting-eleventy-on-github-pages/)

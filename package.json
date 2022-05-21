@@ -14,5 +14,9 @@
   "devDependencies": {
     "@11ty/eleventy": "^1.0.1",
     "moment": "^2.29.3"
+  },
+  "dependencies": {
+    "markdown-it": "^12.3.2",
+    "markdown-it-emoji": "^2.0.2"
   }
 }
