@@ -39,7 +39,13 @@ tags: ["post", "eleventy"]
 - 你可以通过参考 [这篇文章](https://quinndombrowski.com/blog/2022/05/07/hosting-eleventy-on-github-pages/){target="_blank" rel="noopener"} 来完成将Eleventy项目托管发布在GithubPages上的工作.
 
 > [**Github中的配置**](https://docs.github.com/cn/pages){target="_blank" rel="noopener"}
+> - 创建公开的代码仓库命名为[name].github.io
 
+> - 创建gh-pages分支
+
+> - 进入仓库设置页的Actions/General选项页中，选择Action permissions选项的<i>Allow all actions and reusable workflows</i>，以及Workflow permissions选项的Read and write permissions，以使你的Workflows能正常的写入站点文件
+
+> - 进入仓库设置页的Pages选项页，在Source下拉菜单中选择刚刚创建的gh-pages分支,通过[name].github.io访问时，将默认读取此分支下的静态文件
 
 > **Eleventy中配置**
 > - .nojekyll文件：在项目根目录中创建一个名为 <i>.nojekyll</i> 的空文件，此文件将阻止Github尝试将你的站点构建为jekyll站点.
