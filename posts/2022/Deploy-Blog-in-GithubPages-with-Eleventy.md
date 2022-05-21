@@ -24,6 +24,6 @@ tags: ["post"]
 ## 关键点
 
 ## 参考引用
-- [Eleventy Documentation]('https://www.11ty.dev/docs/tutorials/')  
-- [Creating A Blog With Eleventy]('https://keepinguptodate.com/pages/2019/06/creating-blog-with-eleventy/')  
-- [Hosting Eleventy on GitHub Pages]('https://quinndombrowski.com/blog/2022/05/07/hosting-eleventy-on-github-pages/')  
+- [Eleventy Documentation](https://www.11ty.dev/docs/tutorials/)  
+- [Creating A Blog With Eleventy](https://keepinguptodate.com/pages/2019/06/creating-blog-with-eleventy/)  
+- [Hosting Eleventy on GitHub Pages](https://quinndombrowski.com/blog/2022/05/07/hosting-eleventy-on-github-pages/)  
