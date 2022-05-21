@@ -6,9 +6,7 @@ tags: ["post"]
 ---
 
 <!-- Excerpt Start -->
-
 使用静态站点，让博客更专注于内容，减少来自服务器维护、域名、版本管理等一系列的操作和时间成本。
-![11ty](/imgs/11ty.jfif)
 <!-- Excerpt End -->
 
 ### 什么是静态网站和静态网站生成器
@@ -35,7 +33,7 @@ tags: ["post"]
 
 ### 部署流程
 
-```shell-session{.md-code}
+```shell-session
 name: Build Eleventy
 
 on:
