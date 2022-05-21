@@ -1,5 +1,6 @@
 const moment = require('moment');
 const markdownLib = require('./11ty/markdown.js');
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 moment.locale('en');
 
 module.exports = function (eleventyConfig) {
@@ -13,22 +14,30 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addFilter('dateReadable', date => {
         return moment(date).utc().format('LL'); // E.g. May 31, 2019
-    })
+    });
 
     eleventyConfig.addShortcode('excerpt', article => extractExcerpt(article));
 
     eleventyConfig.setLibrary("md", markdownLib);
+    eleventyConfig.addPlugin(syntaxHighlight, {
+        // Change which Eleventy template formats use syntax highlighters
+        templateFormats: ["*"], // default
 
-    return {
-        passthroughFileCopy: true,
-        dir: {
-            input: ".",
-            includes: "_includes",
-            data: "_data",
-            output: "_site"
-        }
+        // Use only a subset of template types (11ty.js added in v4.0.0)
+        // templateFormats: ["liquid", "njk", "md", "11ty.js"],
 
-    };
+        // init callback lets you customize Prism
+        init: function ({ Prism }) {
+            Prism.languages.myCustomLanguage = '/* */';
+        },
+
+        // Added in 3.1.1, add HTML attributes to the <pre> or <code> tags
+        preAttributes: {
+            tabindex: 0
+        },
+        codeAttributes: {},
+    });
+
 }
 
 function extractExcerpt(article) {
