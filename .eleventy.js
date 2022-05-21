@@ -1,15 +1,11 @@
 const moment = require('moment');
-const markdownIt = require('markdown-it')({
-    html: true,
-    linkify: true,
-    typographer: true
-});
-const markdonwItEmoji = require('markdown-it-emoji');
-const markdownLib = markdownIt.use(markdonwItEmoji);
-
+const markdownLib = require('./11ty/markdown.js');
 moment.locale('en');
 
 module.exports = function (eleventyConfig) {
+
+    eleventyConfig.addPassthroughCopy("imgs");
+    eleventyConfig.addPassthroughCopy("css");
 
     eleventyConfig.addFilter('dateIso', date => {
         return moment(date).toISOString();
@@ -23,8 +19,16 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.setLibrary("md", markdownLib);
 
-    eleventyConfig.addPassthroughCopy("imgs");
-    eleventyConfig.addPassthroughCopy("css");
+    return {
+        passthroughFileCopy: true,
+        dir: {
+            input: ".",
+            includes: "_includes",
+            data: "_data",
+            output: "_site"
+        }
+
+    };
 }
 
 function extractExcerpt(article) {
