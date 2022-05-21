@@ -11,6 +11,19 @@ tags: ["post"]
 
 <!-- Excerpt End -->
 
-This is the first post on my blog.
+## 什么是静态站点
 
-Eleventy is super fresh init.
+## 静态站点的优势
+
+## 构建流程
+
+## 发布流程
+
+## 使用流程
+
+## 关键点
+
+## 参考引用
+- [Eleventy Documentation]('https://www.11ty.dev/docs/tutorials/')  
+- [Creating A Blog With Eleventy]('https://keepinguptodate.com/pages/2019/06/creating-blog-with-eleventy/')  
+- [Hosting Eleventy on GitHub Pages]('https://quinndombrowski.com/blog/2022/05/07/hosting-eleventy-on-github-pages/')  
