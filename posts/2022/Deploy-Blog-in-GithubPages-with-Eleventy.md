@@ -2,7 +2,7 @@
 layout: post-layout.njk
 title: 使用Eleventy在GithubPages上部署博客站点
 date: 2022-05-15
-tags: ["post", "eleventy"]
+tags: ["eleventy"]
 recommend: true
 ---
 
