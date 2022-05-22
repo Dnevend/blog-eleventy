@@ -6,6 +6,6 @@ layout: base-layout.njk
 
 ## About Me
 > 坐标杭州  
-> **前端工程师**  
+> 前端工程师  
 > 半个斯多葛主义者  
 > .Net、React、Web 3  
